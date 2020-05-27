@@ -10,23 +10,14 @@ script:
   - docker run -e CI=true smitvavliya/docker-react npm run test
 
 deploy:
-  provider: heroku
-  api_key:
-    secure: $KEY
-  app: "docker-react-travis"
+  edge: true
+  provider: elasticbeanstalk
+  region: "us-west-2"
+  app: "docker"
+  env: "Docker-env"
+  bucket_name: "elasticbeanstalk-us-west-2-306699385840"
+  bucket_path: "docker"
   on:
-    repo: Smit12345/docker-react
-
-
-# deploy:
-#   edge: true
-#   provider: elasticbeanstalk
-#   region: "us-west-2"
-#   app: "docker"
-#   env: "Docker-env"
-#   bucket_name: "elasticbeanstalk-us-west-2-306699385840"
-#   bucket_path: "docker"
-#   on:
-#     branch: master
-#   access_key_id: $AWS_ACCESS_KEY
-#   secret_access_key: $AWS_SECRET_KEY
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
