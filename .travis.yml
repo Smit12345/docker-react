@@ -4,7 +4,7 @@ services:
   - docker
 
 before_install:
-  - docker build -t Smit12345/docker-react -f Dockerfile.dev .
+  - docker build -t smitvavliya/docker-react -f Dockerfile.dev .
 
 script:
-  - docker run -e CI=true Smit12345/docker-react npm run test
+  - docker run -e CI=true smitvavliya/docker-react npm run test
