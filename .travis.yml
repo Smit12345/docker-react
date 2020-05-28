@@ -16,7 +16,6 @@ deploy:
   app: "docker-react-travis"
   on:
     repo: Smit12345/docker-react
-    branch: master
 
 
 # deploy:
